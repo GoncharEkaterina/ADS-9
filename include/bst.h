@@ -56,11 +56,6 @@ typename BST<T>::Node* BST<T>::addNode(Node *root, T item) {
 }
 
 template <typename T>
-void BST<T>::add(T item) {
-  root = addNode(root, item);
-}
-
-template <typename T>
 void BST<T>::delTree(Node* root) {
   if (root == nullptr) {
     return;
@@ -69,6 +64,11 @@ void BST<T>::delTree(Node* root) {
     delTree(root->right);
     delete root;
   }
+}
+
+template <typename T>
+void BST<T>::add(T item) {
+  root = addNode(root, item);
 }
 
 template <typename T>
@@ -94,10 +94,10 @@ int BST<T>::searchNode(Node* root, T item) {
 
 template <typename T>
 int BST<T>::depthTree(Node* root) { //глубина для каждой ветки
-  int vetka1, vetka2;
   if (root == nullptr) {
     return 0;
   } else {
+    int vetka1, vetka2;
     vetka1 = depthTree(root->left);
     vetka2 = depthTree(root->right);
     if (vetka1 > vetka2) {
