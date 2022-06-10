@@ -87,9 +87,9 @@ int BST<T>::searchNode(Node* root, T item) {
     return 0;
   } else if (root->value < item) {
     return searchNode(root->left, item);
-  } else {
+  } else if (root->value < item) {
     return searchNode(root->right, item);
-  }
+  } else { return root->count; }
 }
 
 template <typename T>
