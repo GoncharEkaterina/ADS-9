@@ -6,19 +6,19 @@
 #include  <cstdlib>
 #include <string>
 #include  "bst.h"
-using namespace std;
+//using namespace std;
 
 BST<std::string> makeTree(const char* filename) {
   // поместите сюда свой код
-  string ch;
+  std::string ch;
   BST<string> Tree;
-  ifstream file(filename);
+  std::ifstream file(filename);
   if (!file.is_open()) {
-    cout << "File error" << endl;
+    std::cout << "File error" << std::endl;
     return Tree;
   }
   int count = 0;
-  string str;
+  std::string str;
   while (!file.eof()) {
     ch = file.get();
     count++;
