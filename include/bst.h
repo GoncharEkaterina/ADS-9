@@ -82,7 +82,7 @@ int BST<T>::search(T value) {
 }
 
 template <typename T>
-int BST<T>::searchNode(Node* root, value) {
+int BST<T>::searchNode(Node* root, T value) {
   if (root == nullptr) {
     return 0;
   } else if (root->value < value) {
