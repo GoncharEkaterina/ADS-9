@@ -6,27 +6,27 @@
 
 template <typename T>
 class BST {
-  public: 
-    struct Node {
-      T value;
-      int count;
-      Node *left;
-      Node *right;
-    };
-  private:
-    Node* root;
-    Node* addNode(Node *, T);
-    int depthTree(Node*);
-    int searchNode(Node*, T);
-    void delTree(Node*);
-    //Node* delNode(Node*,int);
-  public:
-  BST();
-  ~BST();
-  void add(T);
-  //void print();
-  int depth();
-  int search(T);
+ public:
+   struct Node {
+     T value;
+     int count;
+     Node *left;
+     Node *right;
+   };
+ private:
+   Node* root;
+   Node* addNode(Node *, T);
+   int depthTree(Node*);
+   int searchNode(Node*, T);
+   void delTree(Node*);
+   //Node* delNode(Node*,int);
+ public:
+ BST();
+ ~BST();
+ void add(T);
+ //void print();
+ int depth();
+ int search(T);
 };
 
 template <typename T>
@@ -95,13 +95,13 @@ int BST<T>::searchNode(Node* root, value) {
 template <typename T>
 int BST<T>::depthTree(Node* root) { //глубина для каждой ветки
   int vetka1, vetka2;
-  if (root == nullptr)
+  if (root == nullptr) {
     return 0;
-  else {
+  } else {
     vetka1 = depthTree(root->left);
     vetka2 = depthTree(root->right);
-    if (vetka1 > vetka2)
+    if (vetka1 > vetka2) {
       return vetka1++;
-    else return vetka2++;
+    } else { return vetka2++; }
   }
 }
