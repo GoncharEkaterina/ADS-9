@@ -17,13 +17,13 @@ BST<std::string> makeTree(const char* filename) {
     return Tree;
   }
   char ch;
-  int count = 0;
-  std::string str;
+  int coun = 0;
+  std::string str = "";
   while (!file.eof()) {
     ch = file.get();
-    count++;
+    coun++;
     if (ch >= 'A' && ch <= 'Z') {
-      ch += ('a' - 'A');
+      ch = ('a' - 'A') + ch;
     }
     if (ch >= 'a' && ch <= 'z') {
       str += ch;
