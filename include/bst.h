@@ -67,6 +67,31 @@ void BST<T>::delTree(Node* root) {
 }
 
 template <typename T>
+int BST<T>::searchNode(Node* root, T item) {
+  if (root == nullptr) {
+    return 0;
+  } else if (root->value == item) {
+    return root->count;
+  } else if (root->value > item) {
+    return searchNode(root->left, item);
+  } else { return searchNode(root->right, item); }
+}
+
+template <typename T>
+int BST<T>::depthTree(Node* root) { //глубина для каждой ветки
+  if (root == nullptr) {
+    return 0;
+  } else {
+    int vetka1, vetka2;
+    vetka1 = depthTree(root->left);
+    vetka2 = depthTree(root->right);
+    if (vetka2 > vetka1) {
+      return vetka2 + 1;
+    } else { return vetka1 + 1; }
+  }
+}
+
+template <typename T>
 void BST<T>::add(T item) {
   root = addNode(root, item);
 }
@@ -79,29 +104,4 @@ int BST<T>::depth() {
 template <typename T>
 int BST<T>::search(T item) {
   return searchNode(root, item);
-}
-
-template <typename T>
-int BST<T>::searchNode(Node* root, T item) {
-  if (root == nullptr) {
-    return 0;
-  } else if (root->value < item) {
-    return searchNode(root->left, item);
-  } else if (root->value < item) {
-    return searchNode(root->right, item);
-  } else { return root->count; }
-}
-
-template <typename T>
-int BST<T>::depthTree(Node* root) { //глубина для каждой ветки
-  if (root == nullptr) {
-    return 0;
-  } else {
-    int vetka1, vetka2;
-    vetka1 = depthTree(root->left);
-    vetka2 = depthTree(root->right);
-    if (vetka1 > vetka2) {
-      return vetka1 + 1;
-    } else { return vetka2 + 1; }
-  }
 }
