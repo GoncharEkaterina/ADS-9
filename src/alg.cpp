@@ -10,13 +10,13 @@
 
 BST<std::string> makeTree(const char* filename) {
   // поместите сюда свой код
-  char ch;
-  BST<string> Tree;
+  BST<std::string> Tree;
   std::ifstream file(filename);
   if (!file.is_open()) {
     std::cout << "File error" << std::endl;
     return Tree;
   }
+  char ch;
   int count = 0;
   std::string str;
   while (!file.eof()) {
@@ -28,7 +28,7 @@ BST<std::string> makeTree(const char* filename) {
     if (ch >= 'a' && ch <= 'z') {
       str += ch;
     } else {
-      Tree.addword(str);
+      Tree.add(str);
       ch = "";
     }
   }
