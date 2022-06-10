@@ -10,7 +10,7 @@
 
 BST<std::string> makeTree(const char* filename) {
   // поместите сюда свой код
-  std::string ch;
+  char ch;
   BST<string> Tree;
   std::ifstream file(filename);
   if (!file.is_open()) {
