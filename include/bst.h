@@ -52,7 +52,7 @@ typename BST<T>::Node* BST<T>::addNode(Node *root, T value) {
   } else {
     root->count++;
   }
-   return root;
+  return root;
 }
 
 template <typename T>
