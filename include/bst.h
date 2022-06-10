@@ -7,26 +7,26 @@
 template <typename T>
 class BST {
  public:
-   struct Node {
-     T value;
-     int count;
-     Node *left;
-     Node *right;
-   };
+    struct Node {
+    T value;
+    int count;
+    Node *left;
+    Node *right;
+    };
  private:
-   Node* root;
-   Node* addNode(Node *, T);
-   int depthTree(Node*);
-   int searchNode(Node*, T);
-   void delTree(Node*);
-   //Node* delNode(Node*,int);
+    Node* root;
+    Node* addNode(Node *, T);
+    int depthTree(Node*);
+    int searchNode(Node*, T);
+    void delTree(Node*);
+    //Node* delNode(Node*,int);
  public:
- BST();
- ~BST();
- void add(T);
- //void print();
- int depth();
- int search(T);
+    BST();
+    ~BST();
+    void add(T);
+    //void print();
+    int depth();
+    int search(T);
 };
 
 template <typename T>
