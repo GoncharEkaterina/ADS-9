@@ -29,7 +29,7 @@ BST<std::string> makeTree(const char* filename) {
       str += ch;
     } else {
       Tree.add(str);
-      ch = "";
+      str = "";
     }
   }
   file.close();
